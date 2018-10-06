@@ -32,4 +32,12 @@ router.post('/register', (req, res) => {
   });
 });
 
+//GET book by :id
+router.get('/:id', (req, res) => {
+  Book.findById(req.params.id)
+    .then(book => res.json(book))
+    .catch(err =>
+      res.status(404).json({ message: 'No book found with that Id' })
+    );
+});
 module.exports = router;
