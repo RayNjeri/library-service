@@ -42,6 +42,19 @@ router.get('/:id', (req, res) => {
     );
 });
 
+//GET all books
+router.get('/', (req, res) => {
+  Book.find()
+    .select('-__v')
+    .then(books => {
+      if (!books) {
+        res.status(404).json({ message: 'No books found' });
+      }
+      res.json(books);
+    })
+    .catch(err => res.status(404).json({ message: 'No books available' }));
+});
+
 // DELETE book
 router.delete('/:id', (req, res) => {
   Book.findById(req.params.id)
