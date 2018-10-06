@@ -1,0 +1,28 @@
+{
+  "name": "library-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayNjeri/library-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayNjeri/library-service/issues"
+  },
+  "homepage": "https://github.com/RayNjeri/library-service#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
