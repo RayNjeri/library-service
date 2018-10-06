@@ -40,4 +40,16 @@ router.get('/:id', (req, res) => {
       res.status(404).json({ message: 'No book found with that Id' })
     );
 });
+
+// DELETE book
+router.delete('/:id', (req, res) => {
+  Book.findById(req.params.id)
+    .then(book => {
+      book.remove().then(() => res.json({ message: 'Successfully deleted' }));
+    })
+    .catch(err =>
+      res.status(404).json({ message: 'No book found with that Id' })
+    );
+});
+
 module.exports = router;
